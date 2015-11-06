@@ -1,5 +1,5 @@
 # urlite
-A small very fast, dependency free url parser for nodejs and the web
+A small, very fast, dependency free url parser for nodejs and the web
 
 - Written in 12 lines of code
 - Unit tested
