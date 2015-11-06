@@ -1,0 +1,50 @@
+{
+  "name": "urlite",
+  "version": "1.0.0",
+  "description": "A small very fast, dependency free url parser for nodejs and the web written in 12 lines of code",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "benchmark": "^1.0.0",
+    "expect.js": "^0.3.1",
+    "fast-url-parser": "^1.1.3",
+    "karma": "^0.13.15",
+    "karma-chrome-launcher": "^0.2.1",
+    "karma-mocha": "^0.2.0",
+    "karma-sinon": "^1.0.4",
+    "karma-sourcemap-loader": "^0.3.6",
+    "karma-webpack": "^1.7.0",
+    "min-url": "^1.2.2",
+    "mocha": "^2.3.3",
+    "sinon": "^1.17.2",
+    "url": "^0.11.0",
+    "url-parse": "^1.0.5",
+    "url-parse-as-address": "^1.0.0",
+    "urlparser": "^0.3.9",
+    "webpack": "^1.12.2"
+  },
+  "scripts": {
+    "test": "node_modules/.bin/mocha test/test* && node_modules/.bin/karma start --single-run"
+  },
+  "author": "alan@qubit.com",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qubitdigital/urlite.git"
+  },
+  "keywords": [
+    "url",
+    "url-parse",
+    "url-parser",
+    "uri",
+    "uri-parse",
+    "uri-parser"
+  ],
+  "bugs": {
+    "url": "https://github.com/qubitdigital/urlite/issues"
+  },
+  "homepage": "https://github.com/qubitdigital/urlite#readme"
+}
