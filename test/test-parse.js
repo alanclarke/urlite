@@ -87,6 +87,23 @@ describe('parse', function () {
     })
   })
 
+  it('should handle case where there is no path', function () {
+    var url = 'http://dev---www-sitting--duck-com.poxy.com:666?_q_portal_protocol=http'
+    expect(parse(url)).to.eql({
+      href: url,
+      hash: undefined,
+      search: '?_q_portal_protocol=http',
+      pathname: undefined,
+      port: '666',
+      hostname: 'dev---www-sitting--duck-com.poxy.com',
+      auth: undefined,
+      protocol: 'http:',
+      host: 'dev---www-sitting--duck-com.poxy.com:666',
+      query: '_q_portal_protocol=http',
+      path: '?_q_portal_protocol=http'
+    })
+  })
+
   it('should handle javascript protocol', function () {
     var url = 'javascript:alert("node is awesome");'
     expect(parse(url)).to.eql({

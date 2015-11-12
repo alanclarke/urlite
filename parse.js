@@ -6,7 +6,7 @@ module.exports = function parse (url) {
   var l = fragments.length
   while (l--) { parts[fragments[l]] = matches[l + 1] }
   parts.host = (parts.hostname && parts.port) ? parts.hostname + ':' + parts.port : parts.hostname
-  parts.query = parts.search && parts.search.substring(1)
-  parts.path = parts.search ? parts.pathname + parts.search : parts.pathname
+  parts.query = parts.search && parts.search.substr(1)
+  parts.path = parts.search ? (parts.pathname ? parts.pathname + parts.search : parts.search) : parts.pathname
   return parts
 }
