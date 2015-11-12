@@ -1,6 +1,6 @@
 module.exports = function (config) {
   config.set({
-    frameworks: ['mocha', 'expect', 'sinon'],
+    frameworks: ['mocha'],
     files: [ 'test/**/test-*' ],
     preprocessors: { 'test/**/test-*': ['webpack', 'sourcemap'] },
     webpack: {
