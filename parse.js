@@ -1,7 +1,8 @@
 var pattern = require('./lib/pattern')
 var fragments = require('./lib/fragments')
 module.exports = function parse (url) {
-  var parts = { href: url }
+  var parts = {}
+  parts.href = url
   var matches = url.match(pattern)
   var l = fragments.length
   while (l--) { parts[fragments[l]] = matches[l + 1] }

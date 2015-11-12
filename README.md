@@ -1,12 +1,13 @@
-# urlite
-A small, very fast, dependency free url parser for nodejs and the web
+# ![urlite](https://cloud.githubusercontent.com/assets/640611/11125144/30a12ab0-8960-11e5-91ba-dfb682572a6c.png)
 
-- Written in 12 lines of code
+An extremely small, fast, dependency free url parser and formatter for nodejs and the web
+
+- Very fast (parses about 15x faster than node's native url module)
+- Very few lines of code
 - Unit tested
-- About 15x faster than node's native url parser
-- Runs both in node and the browser
+- Runs in node out of the box or in the browser with a module bundler such as browserify or webpack (commonjs)
 
-## usage:
+## usage
 ```js
 npm install --save urlite
 
@@ -31,3 +32,9 @@ url.parse('http://user:pass@blah.com:3000/path?query=string#fragment')
 var href = window.location.href
 url.format(url.parse(href)) === href
 ```
+
+## stats:
+```js
+
+```
+[![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
