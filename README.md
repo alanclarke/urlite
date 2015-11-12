@@ -31,6 +31,15 @@ url.parse('http://user:pass@blah.com:3000/path?query=string#fragment')
 
 var href = window.location.href
 url.format(url.parse(href)) === href
+
+// optional querystring parser/formatter (not bundled by default)
+var querystring = require('urlite/querystring')
+
+querystring.parse('?a=b&b=c') // -> { a: 'b', b: 'c'] }
+querystring.format({ a: 'b', b: 'c'] }) // -> '?a=b&b=c'
+// array support
+querystring.parse('?a=b&a=c') // -> { a: ['b', 'c'] }
+querystring.format({ a: ['b', 'c'] }) // -> '?a=b&a=c'
 ```
 
 [![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
