@@ -11,6 +11,7 @@
     "benchmark": "^1.0.0",
     "expect.js": "^0.3.1",
     "fast-url-parser": "^1.1.3",
+    "istanbul": "^0.4.0",
     "karma": "^0.13.15",
     "karma-chrome-launcher": "^0.2.1",
     "karma-mocha": "^0.2.0",
@@ -25,7 +26,21 @@
     "webpack": "^1.12.2"
   },
   "scripts": {
-    "test": "node_modules/.bin/mocha test/test* && node_modules/.bin/karma start --single-run"
+    "test": "make test"
+  },
+  "config": {
+    "blanket": {
+      "pattern": [
+        "parse.js",
+        "format.js",
+        "querystring.js",
+        "lib/*.js"
+      ],
+      "data-cover-never": [
+        "node_modules",
+        "test"
+      ]
+    }
   },
   "author": "alan@qubit.com",
   "license": "UNLICENSED",
