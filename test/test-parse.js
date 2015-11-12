@@ -121,7 +121,7 @@ describe('parse', function () {
     })
   })
 
-  it('should handle other cases', function () {
+  it('should handle other cases that i stole from node code', function () {
     var cases = [{
       url: 'http://nodejs.org/docs/latest/api/url.html#url_url_format_urlobj',
       result: {

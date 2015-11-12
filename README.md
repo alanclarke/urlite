@@ -2,9 +2,9 @@
 
 An extremely small, fast, dependency free url parser and formatter for nodejs and the web
 
-- Very fast (parses about 15x faster than node's native url module)
+- Very fast
 - Very few lines of code
-- Unit tested
+- Good test coverage
 - Runs in node out of the box or in the browser with a module bundler such as browserify or webpack (commonjs)
 
 ## usage
@@ -33,8 +33,4 @@ var href = window.location.href
 url.format(url.parse(href)) === href
 ```
 
-## stats:
-```js
-
-```
 [![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
