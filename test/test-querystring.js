@@ -30,5 +30,11 @@ describe('querystring', function () {
     it('should handle empty objects', function () {
       expect(qs.stringify({})).to.eql('')
     })
+    it('should guard against things attached to the prototype', function () {
+      var F = function () {}
+      F.prototype.a = 'b'
+      var f = new F()
+      expect(qs.stringify(f)).to.eql('')
+    })
   })
 })

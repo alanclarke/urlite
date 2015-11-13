@@ -28,20 +28,6 @@
   "scripts": {
     "test": "make test"
   },
-  "config": {
-    "blanket": {
-      "pattern": [
-        "parse.js",
-        "format.js",
-        "querystring.js",
-        "lib/*.js"
-      ],
-      "data-cover-never": [
-        "node_modules",
-        "test"
-      ]
-    }
-  },
   "author": "alan@qubit.com",
   "license": "UNLICENSED",
   "repository": {

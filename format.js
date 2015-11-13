@@ -7,7 +7,7 @@ module.exports = function format (obj) {
     var part = obj[fragment]
     if (part) {
       if (fragment === 'protocol') {
-        if (part.charAt(0) !== '/') part += '//'
+        part += '//'
       } else if (fragment === 'auth') {
         part += '@'
       } else if (fragment === 'port') {
