@@ -1,7 +1,7 @@
 {
   "name": "urlite",
   "version": "1.1.0",
-  "description": "A small very fast, dependency free url parser for nodejs and the web written in 12 lines of code",
+  "description": "An extremely small, fast, dependency free url parser and formatter for nodejs and the web",
   "main": "index.js",
   "directories": {
     "test": "test"
