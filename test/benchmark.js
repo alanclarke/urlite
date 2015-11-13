@@ -11,7 +11,7 @@ var urlParse = require('url-parse')
 var urlparser = require('urlparser')
 var expect = require('expect.js')
 
-describe('benchmarks', function () {
+describe.skip('benchmarks', function () {
   this.timeout(0)
   it('should be one of the fastest', function (done) {
     suite
