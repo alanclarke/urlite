@@ -27,5 +27,8 @@ describe('querystring', function () {
     it('should handle arrays', function () {
       expect(qs.stringify({ a: ['b', 'c'] })).to.eql('?a=b&a=c')
     })
+    it('should handle empty objects', function () {
+      expect(qs.stringify({})).to.eql('')
+    })
   })
 })
