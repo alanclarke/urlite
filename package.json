@@ -36,11 +36,13 @@
   },
   "keywords": [
     "url",
+    "uri",
     "url-parse",
     "url-parser",
-    "uri",
     "uri-parse",
-    "uri-parser"
+    "uri-parser",
+    "querystring",
+    "qs"
   ],
   "bugs": {
     "url": "https://github.com/qubitdigital/urlite/issues"
