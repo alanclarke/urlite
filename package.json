@@ -19,6 +19,7 @@
     "karma-webpack": "^1.7.0",
     "min-url": "^1.2.2",
     "mocha": "^2.3.3",
+    "standard": "^5.4.1",
     "url": "^0.11.0",
     "url-parse": "^1.0.5",
     "url-parse-as-address": "^1.0.0",
