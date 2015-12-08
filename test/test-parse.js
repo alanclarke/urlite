@@ -121,6 +121,23 @@ describe('parse', function () {
     })
   })
 
+  it('should handle @ signs in the path', function () {
+    var url = 'http://localhost:4400/@qubit/layer@2.20.47/lib/layer_editor.js'
+    expect(parse(url)).to.eql({
+      href: 'http://localhost:4400/@qubit/layer@2.20.47/lib/layer_editor.js',
+      hash: undefined,
+      search: undefined,
+      pathname: '/@qubit/layer@2.20.47/lib/layer_editor.js',
+      port: '4400',
+      hostname: 'localhost',
+      auth: undefined,
+      protocol: 'http:',
+      host: 'localhost:4400',
+      query: undefined,
+      path: '/@qubit/layer@2.20.47/lib/layer_editor.js'
+    })
+  })
+
   it('should handle other cases that i stole from node code', function () {
     var cases = [{
       url: 'http://nodejs.org/docs/latest/api/url.html#url_url_format_urlobj',
