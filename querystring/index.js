@@ -1,5 +1,3 @@
-module.exports = { parse: parse, stringify: stringify }
-
 function stringify (obj) {
   var result = ''
   for (var key in obj) if (has(obj, key)) {
@@ -40,4 +38,9 @@ function has (obj, key) {
 
 function isArray (thing) {
   return Object.prototype.toString.call(thing) === '[object Array]'
+}
+
+module.exports = {
+  parse: parse,
+  stringify: stringify
 }

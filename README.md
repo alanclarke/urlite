@@ -1,11 +1,10 @@
 # ![urlite](https://cloud.githubusercontent.com/assets/640611/11125144/30a12ab0-8960-11e5-91ba-dfb682572a6c.png)
 
-An extremely small, fast, dependency free url parser and formatter for nodejs and the web
+A very small, fast, dependency free url parser and formatter for nodejs and the web
 
-- Very fast
-- Very few lines of code
-- Good test coverage
-- Runs in node out of the box or in the browser with a module bundler such as browserify or webpack (commonjs)
+- fast
+- few lines of code
+- 100% test coverage
 
 ## usage
 ```js
