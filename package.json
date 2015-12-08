@@ -1,6 +1,6 @@
 {
   "name": "urlite",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "A very small, fast, dependency free url parser and formatter for nodejs and the web",
   "main": "index.js",
   "directories": {
