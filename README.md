@@ -7,7 +7,7 @@ A very small, fast, dependency free url parser and formatter for nodejs and the 
 - 100% test coverage
 
 ## why is it so small and fast?
-It extracts all url fragments in a single step, using one massive regex
+It extracts all url fragments in a single step using one massive regex
 
 ## usage
 ```js
