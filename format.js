@@ -16,5 +16,6 @@ module.exports = function format (obj) {
       result = part + result
     }
   }
+  if (obj.href && obj.href.indexOf('//') === 0) result = '//' + result
   return result
 }

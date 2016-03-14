@@ -77,4 +77,19 @@ describe('format', function () {
       href: url
     })).to.eql(url)
   })
+
+  it('should preserve relative protocol', function () {
+    var url = '//example.com/hello'
+    expect(format({
+      auth: undefined,
+      protocol: undefined,
+      port: undefined,
+      hostname: 'example.com',
+      host: 'example.com',
+      pathname: '/hello',
+      search: undefined,
+      hash: undefined,
+      href: url
+    })).to.eql(url)
+  })
 })
