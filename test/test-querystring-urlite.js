@@ -42,4 +42,25 @@ describe('querystring urlite', function () {
     expect(urlite.parse(url)).to.eql(parsed)
     expect(urlite.format(parsed)).to.eql(url)
   })
+  it('should handle empty querystring params', function () {
+    var url = 'proto://user:password@domain.com:3000/some/pathname?blah&blah2=&boop'
+    var parsed = {
+      auth: 'user:password',
+      protocol: 'proto:',
+      port: '3000',
+      hostname: 'domain.com',
+      host: 'domain.com:3000',
+      pathname: '/some/pathname',
+      path: '/some/pathname?blah&blah2=&boop',
+      search: '?blah&blah2=&boop',
+      query: {
+        blah: '',
+        blah2: '',
+        boop: ''
+      },
+      hash: undefined,
+      href: url
+    }
+    expect(urlite.parse(url)).to.eql(parsed)
+  })
 })
