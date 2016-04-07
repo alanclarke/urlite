@@ -18,9 +18,10 @@ function parse (qs) {
   var l = params.length
   for (var i = 0; i < l; i++) {
     if (params[i]) {
-      var keyVal = params[i].match(/([^=]+)(?:=(.*))?/)
-      var key = keyVal[1]
-      var val = keyVal[2]
+      var index = params[i].indexOf('=')
+      if (index === -1) index = params[i].length
+      var key = params[i].substring(0, index)
+      var val = params[i].substring(index + 1)
       if (has(obj, key)) {
         if (!isArray(obj[key])) obj[key] = [obj[key]]
         obj[key].push(val)
