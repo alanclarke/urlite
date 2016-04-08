@@ -15,6 +15,12 @@ describe('querystring', function () {
     it('should handle empty querystring values', function () {
       expect(qs.parse('?&&&')).to.eql({})
     })
+    it('should handle empty querystring values', function () {
+      expect(qs.parse('?a&b&c')).to.eql({ a: '', b: '', c: '' })
+    })
+    it('should handle empty querystring keys', function () {
+      expect(qs.parse('?=')).to.eql({ '': '' })
+    })
     it('should handle undefined querystring', function () {
       expect(qs.parse()).to.eql({})
     })
