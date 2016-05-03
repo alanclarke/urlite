@@ -138,7 +138,7 @@ describe('parse', function () {
     })
   })
 
-  it('should handle other cases that i stole from node code', function () {
+  it('should handle other cases taken from node code & RFC 3986', function () {
     var cases = [{
       url: 'http://nodejs.org/docs/latest/api/url.html#url_url_format_urlobj',
       result: {
@@ -213,6 +213,36 @@ describe('parse', function () {
         pathname: '/',
         path: '/',
         href: 'https://user:pass@example.com/'
+      }
+    }, {
+      url: '/wiki/Help:IPA',
+      result: {
+        protocol: undefined,
+        auth: undefined,
+        host: undefined,
+        port: undefined,
+        hostname: undefined,
+        hash: undefined,
+        search: undefined,
+        query: undefined,
+        pathname: '/wiki/Help:IPA',
+        path: '/wiki/Help:IPA',
+        href: '/wiki/Help:IPA'
+      }
+    }, {
+      url: 'http://:pass@example.org:123/some/directory/file.html?query=string#fragment',
+      result: {
+        protocol: 'http:',
+        auth: ':pass',
+        host: 'example.org:123',
+        port: '123',
+        hostname: 'example.org',
+        hash: '#fragment',
+        search: '?query=string',
+        query: 'query=string',
+        pathname: '/some/directory/file.html',
+        path: '/some/directory/file.html?query=string',
+        href: 'http://:pass@example.org:123/some/directory/file.html?query=string#fragment'
       }
     }]
     for (var i = 0; i < cases.length; i++) {
