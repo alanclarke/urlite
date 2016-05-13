@@ -33,7 +33,7 @@
   "license": "UNLICENSED",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/qubitdigital/urlite.git"
+    "url": "git+https://github.com/QubitProducts/urlite.git"
   },
   "keywords": [
     "url",
@@ -46,7 +46,7 @@
     "qs"
   ],
   "bugs": {
-    "url": "https://github.com/qubitdigital/urlite/issues"
+    "url": "https://github.com/QubitProducts/urlite/issues"
   },
-  "homepage": "https://github.com/qubitdigital/urlite#readme"
+  "homepage": "https://github.com/QubitProducts/urlite#readme"
 }
