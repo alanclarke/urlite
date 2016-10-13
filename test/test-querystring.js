@@ -36,6 +36,12 @@ describe('querystring', function () {
     it('should handle empty objects', function () {
       expect(qs.stringify({})).to.eql('')
     })
+    it('should handle undefined object values', function () {
+      expect(qs.stringify({a: undefined, b: 2})).to.eql('?a=&b=2')
+    })
+    it('should handle falsy values except undefined properly', function () {
+      expect(qs.stringify({a: '', c: 32, b: '', d: 4, e: 0, f: false})).to.eql('?a=&c=32&b=&d=4&e=0&f=false')
+    })
     it('should guard against things attached to the prototype', function () {
       var F = function () {}
       F.prototype.a = 'b'

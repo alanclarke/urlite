@@ -5,6 +5,8 @@ function stringify (obj) {
     if (isArray(val)) {
       var l = val.length
       for (var i = 0; i < l; i++) { result += '&' + key + '=' + val[i] }
+    } else if (val === void 0) {
+      result += '&' + key + '='
     } else {
       result += '&' + key + '=' + val
     }
