@@ -1,6 +1,6 @@
 /* globals describe it */
 var expect = require('expect.js')
-var qs = require('../querystring')
+var qs = require('../extra/querystring')('?')
 describe('querystring', function () {
   describe('parse', function () {
     it('should parse a querystring', function () {
