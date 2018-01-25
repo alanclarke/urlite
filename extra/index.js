@@ -1,5 +1,5 @@
 var urlite = require('../index')
-var qs = require('./querystring')('?')
+var qs = require('../lib/querystring')('?')
 
 function parse (url) {
   var parsed = urlite.parse(url)
@@ -10,7 +10,7 @@ function parse (url) {
 
 function format (parsed) {
   if (typeof parsed.auth !== 'string') parsed.auth = parsed.auth && encodeAuth(parsed.auth)
-  if (typeof parsed.search !== 'string') parsed.search = parsed.search && qs.stringify(parsed.search)
+  if (typeof parsed.search !== 'string') parsed.search = parsed.search && qs.format(parsed.search)
   return urlite.format(parsed)
 }
 

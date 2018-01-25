@@ -38,7 +38,7 @@ var parsed = url.parse('http://user:pass@blah.com:3000/path?a=b#fragment')
 parsed.search // -> { a: "b" }
 parsed.search.a = 'c'
 parsed.auth // -> { user: 'user', password: 'password' }
-url.stringify(parsed) // -> 'http://user:pass@blah.com:3000/path?a=c#fragment'
+url.format(parsed) // -> 'http://user:pass@blah.com:3000/path?a=c#fragment'
 ```
 
 # comparison
