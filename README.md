@@ -31,7 +31,12 @@ url.parse('http://user:pass@blah.com:3000/path?query=string#fragment')
 
 var href = window.location.href
 url.format(url.parse(href)) === href
+```
 
+## Urlite extra
+An extended version of urlite is available at `urlite/extra`. This includes helpful features such as querystring and auth parsing:
+
+```js
 // version of urlite with additional extras like querystring and auth parsing
 var url = require('urlite/extra')
 var parsed = url.parse('http://user:pass@blah.com:3000/path?a=b#fragment')
