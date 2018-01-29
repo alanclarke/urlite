@@ -20,34 +20,25 @@ url.parse('http://user:pass@blah.com:3000/path?query=string#fragment')
 {
   auth: 'user:pass',
   hash: '#fragment',
-  host: 'blah.com:3000',
   hostname: 'blah.com',
   href: 'http://user:pass@blah.com:3000/path?query=string#fragment',
   path: '/path?query=string',
   pathname: '/path',
   port: '3000',
   protocol: 'http:',
-  query: 'query=string',
   search: '?query=string'
 }
 
 var href = window.location.href
 url.format(url.parse(href)) === href
 
-// querystring parser/formatter utility
-var querystring = require('urlite/querystring')
-
-querystring.parse('?a=b&b=c') // -> { a: 'b', b: 'c'] }
-querystring.format({ a: 'b', b: 'c'] }) // -> '?a=b&b=c'
-// array support
-querystring.parse('?a=b&a=c') // -> { a: ['b', 'c'] }
-querystring.format({ a: ['b', 'c'] }) // -> '?a=b&a=c'
-
-
-// querystring parsing version of urlite
-var url = require('urlite/querystring/urlite')
-var result = url.parse('http://user:pass@blah.com:3000/path?query=string#fragment')
-result.query // -> { "query": "string" }
+// version of urlite with additional extras like querystring and auth parsing
+var url = require('urlite/extra')
+var parsed = url.parse('http://user:pass@blah.com:3000/path?a=b#fragment')
+parsed.search // -> { a: "b" }
+parsed.search.a = 'c'
+parsed.auth // -> { user: 'user', password: 'password' }
+url.format(parsed) // -> 'http://user:pass@blah.com:3000/path?a=c#fragment'
 ```
 
 # comparison

@@ -1,6 +1,6 @@
 /* globals describe it */
 var expect = require('expect.js')
-var qs = require('../querystring')
+var qs = require('../extra/querystring')('?')
 describe('querystring', function () {
   describe('parse', function () {
     it('should parse a querystring', function () {
@@ -26,21 +26,21 @@ describe('querystring', function () {
     })
   })
 
-  describe('stringify', function () {
-    it('should stringify a querystring', function () {
-      expect(qs.stringify({ a: 'b', b: 'c' })).to.eql('?a=b&b=c')
+  describe('format', function () {
+    it('should format a querystring', function () {
+      expect(qs.format({ a: 'b', b: 'c' })).to.eql('?a=b&b=c')
     })
     it('should handle arrays', function () {
-      expect(qs.stringify({ a: ['b', 'c'] })).to.eql('?a=b&a=c')
+      expect(qs.format({ a: ['b', 'c'] })).to.eql('?a=b&a=c')
     })
     it('should handle empty objects', function () {
-      expect(qs.stringify({})).to.eql('')
+      expect(qs.format({})).to.eql('')
     })
     it('should guard against things attached to the prototype', function () {
       var F = function () {}
       F.prototype.a = 'b'
       var f = new F()
-      expect(qs.stringify(f)).to.eql('')
+      expect(qs.format(f)).to.eql('')
     })
   })
 })
