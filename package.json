@@ -4,6 +4,7 @@
   "description": "A very small, fast, dependency free url parser and formatter for nodejs and the web",
   "main": "index.js",
   "directories": {
+    "lib": "lib",
     "test": "test"
   },
   "dependencies": {},
@@ -29,7 +30,7 @@
   "scripts": {
     "test": "make test"
   },
-  "author": "alan@qubit.com",
+  "author": "Alan Clarke <alan@qubit.com> (qubit.com)",
   "license": "UNLICENSED",
   "repository": {
     "type": "git",
