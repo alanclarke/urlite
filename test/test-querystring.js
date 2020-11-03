@@ -16,10 +16,10 @@ describe('querystring', function () {
       expect(qs.parse('?&&&')).to.eql({})
     })
     it('should handle empty querystring values', function () {
-      expect(qs.parse('?a&b&c')).to.eql({ a: '', b: '', c: '' })
+      expect(qs.parse('?a&b&c')).to.eql({ a: true, b: true, c: true })
     })
     it('should handle empty querystring keys', function () {
-      expect(qs.parse('?=')).to.eql({ '': '' })
+      expect(qs.parse('?=')).to.eql({ '': true })
     })
     it('should handle undefined querystring', function () {
       expect(qs.parse()).to.eql({})
@@ -32,6 +32,9 @@ describe('querystring', function () {
     })
     it('should handle arrays', function () {
       expect(qs.format({ a: ['b', 'c'] })).to.eql('?a=b&a=c')
+    })
+    it('should handle bools', function () {
+      expect(qs.format({ a: true, b: false, c: 4 })).to.eql('?a&c=4')
     })
     it('should handle empty objects', function () {
       expect(qs.format({})).to.eql('')
