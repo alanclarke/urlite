@@ -34,16 +34,18 @@ url.format(url.parse(href)) === href
 ```
 
 ## Urlite extra
-An extended version of urlite is available at `urlite/extra`. This includes helpful features such as querystring and auth parsing:
+An extended version of urlite is available at `urlite/extra`. This includes helpful features such as querystring, hash and auth parsing:
 
 ```js
 // version of urlite with additional extras like querystring and auth parsing
 var url = require('urlite/extra')
-var parsed = url.parse('http://user:pass@blah.com:3000/path?a=b#fragment')
+var parsed = url.parse('http://user:pass@blah.com:3000/path?a=b#c=d')
 parsed.search // -> { a: "b" }
 parsed.search.a = 'c'
+parsed.hash // -> { c: "d" }
+parsed.hash.c = 'e'
 parsed.auth // -> { user: 'user', password: 'password' }
-url.format(parsed) // -> 'http://user:pass@blah.com:3000/path?a=c#fragment'
+url.format(parsed) // -> 'http://user:pass@blah.com:3000/path?a=c#c=e'
 ```
 
 # comparison
