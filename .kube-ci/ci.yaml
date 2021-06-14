@@ -1,0 +1,68 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+  annotations:
+    'kube-ci.qutics.com/cacheScope': 'project'
+    'kube-ci.qutics.com/cacheSize': '20Gi'
+spec:
+  entrypoint: run
+  volumes:
+    - name: secrets
+      secret:
+        secretName: ci-secrets
+    - name: build-cache
+      persistentVolumeClaim:
+        claimName: '{{workflow.parameters.cacheVolumeClaimName}}'
+  templates:
+    - name: main
+      steps:
+        - - name: run
+            template: run
+            when: '{{workflow.parameters.branch}} != "gh-pages"'
+    - name: run
+      inputs:
+        artifacts:
+          - name: code
+            path: /src
+            git:
+              repo: '{{workflow.parameters.repo}}'
+              revision: '{{workflow.parameters.revision}}'
+              sshPrivateKeySecret:
+                name: ci-secrets
+                key: ssh-private-key
+      container:
+        image: 'eu.gcr.io/qubit-registry/tools/node12chrome:latest'
+        args:
+          - 'sh'
+          - '-c'
+          - |
+            set -x
+            set -e
+
+            cp /.ci-secrets/npmrc $HOME/.npmrc
+            export XDG_CACHE_HOME=/cache/.cache
+            export CYPRESS_CACHE_FOLDER=/cache/.cache
+            npm set cache /cache/npm
+            PATH=$PATH:$(pwd)/node_modules/.bin
+
+            npm i
+            npm run lint
+            npm run coverage
+            npm run test-ci
+        workingDir: /src
+        env:
+          - name: SAUCE_USERNAME
+            valueFrom:
+              secretKeyRef:
+                name: ci-secrets
+                key: SAUCE_USERNAME
+          - name: SAUCE_ACCESS_KEY
+            valueFrom:
+              secretKeyRef:
+                name: ci-secrets
+                key: SAUCE_ACCESS_KEY
+        volumeMounts:
+          - name: secrets
+            mountPath: /.ci-secrets
+          - name: build-cache
+            mountPath: /cache
