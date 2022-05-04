@@ -24,6 +24,12 @@ describe('querystring', function () {
     it('should handle undefined querystring', function () {
       expect(qs.parse()).to.eql({})
     })
+    it('should handle badly encoded parts', function () {
+      expect(qs.parse('foo=%C1%A4%BB%F3+%C3%B3%B8%AE+%B5%C7%BE%FA%BD%C0%B4%CF%B4%D9&bar=boz')).to.eql({
+        bar: 'boz',
+        foo: '%C1%A4%BB%F3+%C3%B3%B8%AE+%B5%C7%BE%FA%BD%C0%B4%CF%B4%D9'
+      })
+    })
   })
 
   describe('format', function () {
