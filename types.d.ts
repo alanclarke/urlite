@@ -8,6 +8,7 @@ declare module "urlite" {
     pathname?: string
     search?: string
     hash?: string
+    href?: string
   }
   export function parse(path: string): URLDescriptor
   export function format(obj: URLDescriptor): string
@@ -23,6 +24,7 @@ declare module "urlite/extra" {
     pathname?: string
     search: Record<string, string | string[] | true | undefined>
     hash: Record<string, string | string[] | true | undefined>
+    href?: string
   }
 
   export function parse(path: string): URLDescriptorExtra
