@@ -18,7 +18,7 @@
     "karma-mocha": "^2.0.1",
     "karma-sauce-launcher": "^2.0.2",
     "karma-sourcemap-loader": "^0.3.8",
-    "karma-webpack": "^4.0.2",
+    "karma-webpack": "^5.0.0",
     "min-url": "^1.4.0",
     "mocha": "^8.4.0",
     "nyc": "^15.1.0",
@@ -27,7 +27,7 @@
     "url-parse": "^1.5.10",
     "url-parse-as-address": "^1.0.0",
     "urlparser": "^0.3.9",
-    "webpack": "^4.44.1"
+    "webpack": "^5.75.0"
   },
   "scripts": {
     "test": "mocha",
