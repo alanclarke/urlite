@@ -20,7 +20,7 @@
     "karma-sourcemap-loader": "^0.3.8",
     "karma-webpack": "^4.0.2",
     "min-url": "^1.4.0",
-    "mocha": "^8.4.0",
+    "mocha": "^10.2.0",
     "nyc": "^15.1.0",
     "standard": "^11.0.1",
     "url": "^0.11.0",
