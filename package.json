@@ -3,6 +3,7 @@
   "version": "3.0.1",
   "description": "A very small, fast, dependency free url parser and formatter for nodejs and the web",
   "main": "index.js",
+  "types": "types.d.ts",
   "directories": {
     "lib": "lib",
     "test": "test"
