@@ -22,7 +22,7 @@
     "min-url": "^1.4.0",
     "mocha": "^8.4.0",
     "nyc": "^15.1.0",
-    "standard": "^11.0.1",
+    "standard": "^17.0.0",
     "url": "^0.11.0",
     "url-parse": "^1.5.10",
     "url-parse-as-address": "^1.0.0",
